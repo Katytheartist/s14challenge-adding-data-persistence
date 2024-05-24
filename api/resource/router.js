@@ -5,7 +5,16 @@ const Resource = require('./model')
 router.get('/', (req, res, next)=>{
     Resource.getResources()
     .then(resources =>{
+        //throw new Error('Arrrrghhhhh!')
         res.status(200).json(resources)
+    })
+    .catch(next)
+})
+
+router.post('/', (req, res, next)=>{
+    Resource.post(req.body)
+    .then(newResource =>{
+        res.status(201).json(newResource)
     })
     .catch(next)
 })
