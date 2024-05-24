@@ -3,9 +3,8 @@
 //const db = require('../../data/dbConfig')
 
 async function getAll(){
-    return Promise.resolve('getting the projects')
+    Promise.resolve('gettin projects')
 }
-
 
 module.exports = {
     getAll,
