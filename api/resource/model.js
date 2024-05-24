@@ -4,8 +4,12 @@ const db = require('../../data/dbConfig')
 
 async function getAll(){
     const resourceRows = await db('resources as r')
-        .select('resource_id', 'resource_name', 'resource_description')
-       // .orderBy('resource_id')
+        .select(
+            'resource_id', 
+            'resource_name', 
+            'resource_description'
+        )
+       
         return resourceRows.map(row => ({
             resource_id: row.resource_id,
             resource_name: row.resource_name,
